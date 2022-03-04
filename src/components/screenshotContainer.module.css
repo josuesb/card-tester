@@ -6,6 +6,8 @@
     background-color: #fff;
     border: 3px dotted #a4a4a4;
     border-radius: 10px;
+    padding: 50px 9px;
+    width: 95.5vw;
 }
 
 .dottedBottomBorder {
@@ -13,7 +15,12 @@
 }
 
 /* Cards */
-.card{ 
+
+.cardsContainer {
+    padding: 15px;
+}
+
+.cardsContainer .card{ 
     /*background-color: #191919;
     margin: 0.75%;
     border: none!important;
@@ -27,16 +34,21 @@
     min-width: 100px;
     overflow: hidden;
     position: relative;
+    border-radius: 5px;
+    width: 30%;
+    max-width: 325px;
+    float: left;
+    margin-left: 1%;
+    margin-top: 10px;
 }
 
 .card_background {
-    opacity: 0.6;
+    opacity: 0.5;
     position: absolute;
     left: 0;
     top: 0;
-    width: 100%;
-    height: auto;
-
+    width: auto;
+    height: 100%;
     background-position: left top!important;
     background-size: cover;
 }
@@ -50,6 +62,8 @@
     height: 100%;
     border-radius: 0.25rem;*/
     position: relative;
+    padding: 48px 24px;
+    text-align: left;
 }
 
 .icon {
@@ -58,7 +72,94 @@
     margin-bottom: 15px;
 }
 
-.card_content h3 {
+.card_title {
     font-weight: 400;
     font-size: 24px;
+    color: #fff;
+}
+
+/*Carg Medium*/
+
+.cardsContainer .card_medium{ 
+    background-color: #000;
+    min-height: 400px;
+    min-width: 100px;
+    overflow: hidden;
+    position: relative;
+    border-radius: 5px;
+    max-width: 529px;
+    width: 100%;
+    float: left;
+    margin-top: 10px;
+}
+
+.card_background_medium {
+    opacity: 0.5;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: auto;
+    background-position: left top!important;
+    background-size: cover;
+}
+
+/*Carg Big*/
+
+.cards_container_big .card_big{ 
+    background-color: #000;
+    height: 500px;
+    overflow: hidden;
+    position: relative;
+    border-radius: 5px;
+    width: 100%;
+    float: left;
+    margin-top: 10px;
+}
+
+.card_background_big {
+    opacity: 0.5;
+    position: absolute;
+    left: 0;
+    top: -100%;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: auto;
+    background-position: center!important;
+    background-size: cover;
+}
+
+
+.card_content_big {
+    position: relative;
+    padding: 48px 24px;
+    text-align: center;
+    color: #fff;
+}
+
+.card_button {
+    color: #fff;
+    background-color: #c81414;
+    width: 220px;
+    height: 45px;
+    padding-top: 10px;
+    display: block;
+    margin: 0 auto;
+}
+
+.card_title_big {
+    max-width: 95vw;
+    display: block;
+    margin: 0 auto;
+    padding: 100px 30px 0 30px;
+    margin: 0.8em 0 1.5rem;
+    font-weight: 400;
+    font-size: 2.4rem;
+}
+
+.card_subtitle_big img{
+    width: 20px;
+    height: 20px;
+    margin-bottom: 1px;
 }
