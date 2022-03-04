@@ -65,8 +65,12 @@ export default function ScreenshotContainer() {
             </Container>*/
         <Container>
             <Row>
-                <Col md={4}>1</Col>
-                <Col md={4}>2</Col>
+                <Col md={4}>
+                    <input type="file" accept="image/*" onChange={onImageSquareChange} />
+                </Col>
+                <Col md={4}>
+                    <input type="file" accept="image/*" onChange={onImageLandscapeChange} />
+                </Col>
                 <Col md={4}>
                     <button onClick={() => exportAsImage(exportRef.current, "CoverTest_" + Math.floor(Math.random() * 9999))}>
                         Download screenshot
@@ -79,29 +83,43 @@ export default function ScreenshotContainer() {
                         <h2>
                             Card preview
                         </h2>
-                    </Row>
+                    </Row> 
+                    {ImageSquareURLs.map(ImageSquareSrc => 
                     <Row>
                         <Col md="4">
-                              <CardMedium test={"dsfsf"}></CardMedium>
+                              <CardMedium background={ImageSquareSrc}></CardMedium>
                         </Col>
                         <Col md={"8"}>
                             <Row>
                                 <Col>
-                                    <CardSmall background={'url("https://via.placeholder.com/800x800")'}></CardSmall>
+                                    <CardSmall background={ImageSquareSrc}></CardSmall>
                                 </Col>
                                 <Col>
-                                    <CardSmall background="blue"></CardSmall>
+                                    <CardSmall background={ImageSquareSrc}></CardSmall>
                                 </Col>
                                 <Col>
-                                    <CardSmall></CardSmall>
+                                    <CardSmall background={ImageSquareSrc}></CardSmall>
                                 </Col>
                             </Row>
                         </Col>
-                    </Row>
+                    </Row>)}
+                    {ImageSquareURLs.length > 0? "":<p><i>Cards will appear here once you upload an image</i></p> }                
+                </Row>
+                -----
 
-                <br></br>fgdfss<hr></hr>
-                fdgdfg 
-                   
+                <Row className={styles.previewContainer + " pt-3 pb-3"}>
+                    <Row>
+                        <h2>
+                            Card preview
+                        </h2>
+                    </Row> 
+                    {ImageLandscapeURLs.map(ImageLandscapeURLs => 
+                    <Row>
+                        <Col md="12">
+                              <CardMedium background={ImageLandscapeURLs}></CardMedium>
+                        </Col>
+                    </Row>)}
+                    {ImageLandscapeURLs.length > 0? "":<p><i>Cards will appear here once you upload an image</i></p> }                
                 </Row>
             </div>
         </Container>
@@ -111,20 +129,28 @@ export default function ScreenshotContainer() {
 
 
 function CardSmall(props) {
+    let image = "https://via.placeholder.com/50x50"
+    if (props.background != undefined){
+        image = props.background;
+    }
     return (
         <Col className={styles.card}>
-            <div className={styles.card_content+" pt-4"} style={{background: props.background}}>
-                <img className={styles.icon} src="icon.png" alt=""></img>
+            <img className={styles.card_background} src={image} alt=""></img>
+            <div className="card_content">
                 <h3>One line title</h3>
             </div>
         </Col>
     )
 }
 function CardMedium(props) {
+    let image = "https://via.placeholder.com/50x50"
+    if (props.background != undefined){
+        image = props.background;
+    }
     return (
         <Col className={styles.card}>
-            <div className={styles.card_content+" pt-4"} style={{background: props.background}}>
-                <img className={styles.icon} src="icon.png" alt=""></img>
+            <img className={styles.card_background} src={image} alt=""></img>
+            <div className="card_content">
                 <h3>One line title</h3>
             </div>
         </Col>
