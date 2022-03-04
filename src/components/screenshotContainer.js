@@ -87,7 +87,7 @@ export default function ScreenshotContainer() {
                     {ImageSquareURLs.map(ImageSquareSrc =>
                         <Row key={ImageSquareURLs} className={styles.cardsContainer}>
                             <CardMedium background={ImageSquareSrc} title="FF Fitness - Biceps, hombros y abs con mancuernas y algo mas de texto para ver como queda"></CardMedium>
-                            <CardSmall background={ImageSquareSrc} title="One line title"></CardSmall>
+                            <CardSmall background={ImageSquareSrc} title="Developer Roles e Responsibilities "></CardSmall>
                             <CardSmall background={ImageSquareSrc} title="TFF Fitness - Biceps, hombros y abs con mancuernas"></CardSmall>
                             {window.innerWidth < 1745 ? <></> : <CardSmall background={ImageSquareSrc} title="FF Fitness - Biceps, hombros y abs con mancuernas y algo mas de texto para ver como queda"></CardSmall>}
                         </Row>)}
