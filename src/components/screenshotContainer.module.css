@@ -45,10 +45,10 @@
 .card_background {
     opacity: 0.5;
     position: absolute;
-    left: -7%;
+    left: 0%;
     top: 0;
     width: auto;
-    height: 112%;
+    height: 116%;
     background-position: left top!important;
     background-size: cover;
 }
@@ -87,7 +87,7 @@
     overflow: hidden;
     position: relative;
     border-radius: 5px;
-    max-width: 529px;
+    max-width: 650px;
     width: 100%;
     float: left;
     margin-top: 10px;
@@ -98,7 +98,7 @@
     position: absolute;
     left: 0;
     top: 0;
-    width: 100%;
+    width: 116%;
     height: auto;
     background-position: left top!important;
     background-size: cover;
