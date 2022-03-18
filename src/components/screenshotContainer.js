@@ -102,7 +102,7 @@ export default function ScreenshotContainer() {
                     </Row>
                     {ImageLandscapeURLs.map(ImageLandscapeURLs =>
                         <Row key={ImageLandscapeURLs} className={styles.cards_container_big}>
-                            <CardBig background={ImageLandscapeURLs} title="FF Fitness - Biceps, hombros y abs con mancuernas y algo mas de texto para ver como queda"></CardBig>
+                            <CardBig background={ImageLandscapeURLs} title="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt"></CardBig>
                         </Row>)}
                     {ImageLandscapeURLs.length > 0 ? "" : <p><i>Cards will appear here once you upload an image</i></p>}
                 </div>
