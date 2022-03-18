@@ -86,10 +86,10 @@ export default function ScreenshotContainer() {
                     </Row>
                     {ImageSquareURLs.map(ImageSquareSrc =>
                         <Row key={ImageSquareURLs} className={styles.cardsContainer}>
-                            <CardMedium background={ImageSquareSrc} title="FF Fitness - Biceps, hombros y abs con mancuernas y algo mas de texto para ver como queda"></CardMedium>
-                            <CardSmall background={ImageSquareSrc} title="Developer Roles e Responsibilities "></CardSmall>
-                            <CardSmall background={ImageSquareSrc} title="TFF Fitness - Biceps, hombros y abs con mancuernas"></CardSmall>
-                            {window.innerWidth < 1745 ? <></> : <CardSmall background={ImageSquareSrc} title="FF Fitness - Biceps, hombros y abs con mancuernas y algo mas de texto para ver como queda"></CardSmall>}
+                            <CardMedium background={ImageSquareSrc} title="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt"></CardMedium>
+                            <CardSmall background={ImageSquareSrc} title="Sed ut perspiciatis unde omnis ist"></CardSmall>
+                            <CardSmall background={ImageSquareSrc} title="Ut enim ad minima veniam, quis nostrum exercitationem ullam"></CardSmall>
+                            {window.innerWidth < 1745 ? <></> : <CardSmall background={ImageSquareSrc} title="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt"></CardSmall>}
                         </Row>)}
                     {ImageSquareURLs.length > 0 ? "" : <p><i>Cards will appear here once you upload an image</i></p>}
                 </div>
