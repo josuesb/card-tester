@@ -97,12 +97,22 @@ export default function ScreenshotContainer() {
                 <div className={styles.previewContainer + " pt-3 pb-3"}>
                     <Row>
                         <h2>
-                            Hero preview
+                        Hero with titles and button:
                         </h2>
                     </Row>
                     {ImageLandscapeURLs.map(ImageLandscapeURLs =>
                         <Row key={ImageLandscapeURLs} className={styles.cards_container_big}>
-                            <CardBig background={ImageLandscapeURLs} title="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt"></CardBig>
+                            <CardBig showTitle={true} background={ImageLandscapeURLs} title="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt"></CardBig>
+                        </Row>)}
+                    {ImageLandscapeURLs.length > 0 ? "" : <p><i>Cards will appear here once you upload an image</i></p>}
+
+
+                    <Row>&nbsp;<br></br>
+                        <h2>Empty hero:</h2>
+                    </Row>
+                    {ImageLandscapeURLs.map(ImageLandscapeURLs =>
+                        <Row key={ImageLandscapeURLs} className={styles.cards_container_big}>
+                            <CardBig showTitle={false} background={ImageLandscapeURLs} title="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt"></CardBig>
                         </Row>)}
                     {ImageLandscapeURLs.length > 0 ? "" : <p><i>Cards will appear here once you upload an image</i></p>}
                 </div>
@@ -148,14 +158,18 @@ function CardBig(props) {
     if (props.background !== undefined) {
         image = props.background;
     }
+
+    let cardContent;
+    if (props.showTitle){
+        cardContent=<div className={styles.card_content_big}><h3 className={styles.card_title_big}>{props.title}</h3><p className={styles.card_subtitle_big}><img className={styles.icon} src="../../../icon.png" alt="icon"></img> Little description</p><div className={styles.card_button}>I am a button</div></div>
+    } else {
+        cardContent = <></>
+    }
+
     return (
         <div className={styles.card_big}>
             <img className={styles.card_background_big} src={image} alt=""></img>
-            <div className={styles.card_content_big}>
-                <h3 className={styles.card_title_big}>{props.title}</h3>
-                <p className={styles.card_subtitle_big}><img className={styles.icon} src="../../../icon.png" alt="icon"></img> Little description</p>
-                <div className={styles.card_button}>I am a button</div>
-            </div>
+            {cardContent}
         </div>
     )
 }
