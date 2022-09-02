@@ -76,7 +76,7 @@ export default function ScreenshotContainer() {
                 <Col>
             <br></br>&nbsp;
                 Title:
-                <input className={styles.input} type="text" name="title" onChange={handleTextChange} value="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt"/>
+                <input className={styles.input} type="text" name="title" onChange={handleTextChange} value="Sed ut perspiciatis unde omnis ist"/>
                 </Col>
             </Row>
             <br></br>
@@ -102,8 +102,8 @@ export default function ScreenshotContainer() {
                     </Row>
                     {ImageSquareURLs.map(ImageSquareSrc =>
                         <Row key={ImageSquareURLs} className={styles.cardsContainer}>
-                            <CardMedium background={ImageSquareSrc} title="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt"></CardMedium>
-                            <CardSmall background={ImageSquareSrc} title="Sed ut perspiciatis unde omnis ist"></CardSmall>
+                            <CardMedium background={ImageSquareSrc} title={title+""}></CardMedium>
+                            <CardSmall background={ImageSquareSrc} title={title+""}></CardSmall>
                             <CardSmall background={ImageSquareSrc} title="Ut enim ad minima veniam, quis nostrum exercitationem ullam"></CardSmall>
                             {window.innerWidth < 1745 ? <></> : <CardSmall background={ImageSquareSrc} title="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt"></CardSmall>}
                         </Row>)}
