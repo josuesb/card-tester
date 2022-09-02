@@ -7,8 +7,7 @@ import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
 
 export default function ScreenshotContainer() {
-    const [title, setTitle] = useState("Sed ut perspiciatis unde omnis ist");
-
+    const [title, setTitle] = useState("");
 
     /*Image logic - square*/
     const exportRef = useRef();
@@ -16,6 +15,9 @@ export default function ScreenshotContainer() {
     const [ImageSquareURLs, setImageSquareURLs] = useState([]);
 
     useEffect(() => {
+        if(title.length <1) {
+            setTitle("Sed ut perspiciatis unde omnis is");
+        }
         if (ImageSquares.length < 1) return;
         const newImageSquareURLs = [];
         ImageSquares.forEach(ImageSquare => newImageSquareURLs.push(URL.createObjectURL(ImageSquare)));
@@ -30,6 +32,9 @@ export default function ScreenshotContainer() {
     const [ImageLandscapeURLs, setImageLandscapeURLs] = useState([]);
 
     useEffect(() => {
+        if(title.length <1) {
+            setTitle("Sed ut perspiciatis unde omnis is");
+        }
         if (ImageLandscapes.length < 1) return;
         const newImageLandscapeURLs = [];
         ImageLandscapes.forEach(ImageLandscape => newImageLandscapeURLs.push(URL.createObjectURL(ImageLandscape)));
@@ -40,9 +45,9 @@ export default function ScreenshotContainer() {
         setImageLandscapes([...e.target.files]);
     }
 
-    function handleTextChange(event) {
-        setTitle(event.target.value)
-    }
+   // function handleTextChange(event) {
+        //setTitle(event.target.value)
+    //}
 
     return (
         /*<Container>
@@ -76,7 +81,7 @@ export default function ScreenshotContainer() {
                 <Col>
             <br></br>&nbsp;
                 Title:
-                <input className={styles.input} type="text" name="title" onChange={handleTextChange} value="Sed ut perspiciatis unde omnis ist"/>
+                <input className={styles.input} type="text" name="title" onChange={event => setTitle(event.target.value)} value={title}/>
                 </Col>
             </Row>
             <br></br>
