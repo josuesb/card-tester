@@ -7,6 +7,9 @@ import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
 
 export default function ScreenshotContainer() {
+    const [title, setTitle] = useState("Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt");
+
+
     /*Image logic - square*/
     const exportRef = useRef();
     const [ImageSquares, setImageSquares] = useState([]);
@@ -37,6 +40,10 @@ export default function ScreenshotContainer() {
         setImageLandscapes([...e.target.files]);
     }
 
+    function handleTextChange(event) {
+        setTitle(event.target.value)
+    }
+
     return (
         /*<Container>
                 <Row className={"parent "+styles.tests}>
@@ -65,6 +72,15 @@ export default function ScreenshotContainer() {
             </Container>*/
         <Container fluid>
             <Row>
+            <br></br>&nbsp;
+                <Col>
+            <br></br>&nbsp;
+                Title:
+                <input className={styles.input} type="text" name="title" onChange={handleTextChange} value="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt"/>
+                </Col>
+            </Row>
+            <br></br>
+            <Row>
                 <Col md={4}>
                     <input type="file" accept="image/*" onChange={onImageSquareChange} />
                 </Col>
@@ -81,7 +97,7 @@ export default function ScreenshotContainer() {
                 <div className={styles.previewContainer + " pt-3 pb-3"}>
                     <Row>
                         <h2>
-                            Card preview
+                            Card preview 
                         </h2>
                     </Row>
                     {ImageSquareURLs.map(ImageSquareSrc =>
@@ -102,7 +118,7 @@ export default function ScreenshotContainer() {
                     </Row>
                     {ImageLandscapeURLs.map(ImageLandscapeURLs =>
                         <Row key={ImageLandscapeURLs} className={styles.cards_container_big}>
-                            <CardBig showTitle={true} background={ImageLandscapeURLs} title="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt"></CardBig>
+                            <CardBig showTitle={true} background={ImageLandscapeURLs} title={title+""}></CardBig>
                         </Row>)}
                     {ImageLandscapeURLs.length > 0 ? "" : <p><i>Cards will appear here once you upload an image</i></p>}
 
