@@ -7,7 +7,7 @@ import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
 
 export default function ScreenshotContainer() {
-    const [title, setTitle] = useState("Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt");
+    const [title, setTitle] = useState("Sed ut perspiciatis unde omnis ist");
 
 
     /*Image logic - square*/
